@@ -1,0 +1,11 @@
+$sizes: (
+	sm: calc(1rem * 0.6),
+	md: calc(1rem * 1.2),
+	lg: calc(1rem * 1.5),
+);
+
+:root {
+	@each $name, $value in $sizes {
+		--#{$name}-padding: #{$value};
+	}
+}

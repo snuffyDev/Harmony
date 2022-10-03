@@ -1,0 +1,35 @@
+span {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	padding-left: var(--nodePaddingLeft, 1rem);
+	border-left: var(--nodeBorderLeft, 1px dotted #9ca3af);
+	color: var(--c-app-foreground-base, #374151);
+}
+.hidden {
+	display: none;
+}
+.bracket {
+	cursor: pointer;
+}
+.bracket:hover {
+	background: var(--c-app-overlays-base-1, #d1d5db);
+}
+.comma {
+	color: var(--nodeColor, #374151);
+}
+.val {
+	color: var(--leafDefaultColor, #9ca3af);
+}
+.val.string {
+	color: var(--leafStringColor, #059669);
+}
+.val.number {
+	color: var(--leafNumberColor, #d97706);
+}
+.val.boolean {
+	color: var(--leafBooleanColor, #2563eb);
+}

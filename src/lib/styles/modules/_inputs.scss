@@ -1,0 +1,53 @@
+.form {
+	margin-bottom: 0.8em;
+}
+
+input:not([type="checkbox"]):not([type="radio"]) {
+	position: relative;
+
+	height: auto;
+	min-height: 1em;
+	max-height: 30ch;
+
+	width: 100%;
+	padding: var(--sm-padding);
+	transition: 100ms cubic-bezier(0.47, 0.25, 0.745, 0.715);
+	transition-property: background-color, border-color, color;
+
+	border: 1px solid var(--c-app-overlays-base);
+	border-radius: var(--sm-radius);
+	box-shadow: 0 0 0.25em 0.02em hsla(0, 0%, 66.7%, 0) !important;
+
+	background-color: #0000;
+
+	&.block {
+		max-width: 100%;
+	}
+	&::placeholder {
+		font-weight: 400;
+		// opacity: 0.7;
+		color: var(--c-app-overlays-hover);
+	}
+
+	@media screen and (hover: hover) {
+		&:hover {
+			background-color: var(--c-app-overlays-base-2);
+			border-color: var(--c-app-overlays-hover);
+			&::placeholder {
+				color: var(--c-app-overlays-hover);
+			}
+		}
+	}
+
+	&:hover:active,
+	&:focus-within {
+		border-color: var(--c-app-overlays-active);
+		&::placeholder {
+			color: var(--c-app-overlays-active);
+		}
+	}
+
+	&.no-btn {
+		display: block;
+	}
+}

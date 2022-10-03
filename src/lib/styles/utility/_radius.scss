@@ -1,0 +1,13 @@
+$base-radius: 1em;
+$size-names: (
+	xs: 0.2,
+	sm: 0.3,
+	md: 0.4,
+	lg: 0.5,
+);
+
+:root {
+	@each $name, $value in $size-names {
+		--#{$name}-radius: #{calc($base-radius * $value)};
+	}
+}

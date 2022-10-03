@@ -1,0 +1,7 @@
+.toolbar-item {
+	display: inline-flex;
+	flex: none;
+	&:not(:last-of-type) {
+		border-right: 1px solid var(--c-divider-400);
+	}
+}

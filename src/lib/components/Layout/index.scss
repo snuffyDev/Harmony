@@ -1,0 +1,22 @@
+.results {
+	display: flex;
+
+	max-height: 100%;
+	overflow: auto;
+
+	flex-direction: column;
+	height: 100%;
+	// gap: 1em;
+}
+.app {
+	display: flex;
+	min-height: 100vh;
+	position: relative;
+
+	background-color: var(--c-app-background-base);
+	user-select: none;
+}
+
+.response {
+	margin: 0 1em;
+}

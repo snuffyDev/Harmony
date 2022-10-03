@@ -1,0 +1,6 @@
+@forward "./lib/styles/styles.export";
+
+:root {
+	color: var(--c-app-foreground-base);
+	background-color: var(--c-app-background-base);
+}

@@ -1,0 +1,47 @@
+@use "../../styles/app/theme" as *;
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+	position: relative;
+
+	padding: var(--sm-padding) var(--lg-padding);
+	border: 1px solid var(--c-app-overlays-base);
+	border-radius: var(--sm-radius);
+	transition: 100ms;
+	letter-spacing: -0.02em;
+
+	transition-property: border-color, background-color, color;
+	&::before {
+		background-color: #0000;
+		transition: 200ms 0ms ease-out;
+		transition-property: border-color, background-color, color, opacity;
+		content: "";
+		position: absolute;
+		inset: 0;
+		opacity: 0;
+	}
+	&:hover {
+		border-color: var(--c-app-overlays-hover);
+		&::before {
+			background-color: var(--c-app-overlays-base-1);
+			opacity: 0.2;
+		}
+	}
+	&:active,
+	&:hover:active {
+		border-color: var(--c-app-overlays-active);
+
+		&::before {
+			transition: 0ms 0ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
+
+			opacity: 0.6;
+		}
+	}
+}
+
+.block {
+	width: 100%;
+}

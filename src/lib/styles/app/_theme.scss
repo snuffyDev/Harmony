@@ -1,0 +1,53 @@
+$base-overlay: rgba(156, 160, 172, 0.4);
+
+$background-base-1: hsl(240, 2%, 8%);
+$background-base: hsl(240, 8%, 4%);
+$success: hsl(160, 84%, 39%);
+$error: hsl(0, 59%, 48%);
+$info: hsl(199, 59%, 58%);
+$alert: #1e293b;
+$theme: (
+	app: (
+		foreground: (
+			base: hsl(0, 0%, 97%),
+		),
+		background: (
+			base: $background-base,
+			base-1: $background-base-1,
+			success: $success,
+			error: $error,
+			info: $info,
+			alert: $alert,
+		),
+		overlays: (
+			base: rgba(156, 160, 172, 0.4),
+			base-1: hsla(225, 10%, 84%, 0.15),
+			base-2: hsla(225, 10%, 54%, 0.07),
+			hover: hsla(225, 9%, 84%, 0.4),
+			active: hsla(225, 9%, 100%, 0.4),
+			active-1: hsla(225, 9%, 100%, 0.5),
+			active-2: hsla(225, 9%, 100%, 0.6),
+		),
+	),
+	panel: (
+		background: (
+			base: hsl(240, 7%, 12%),
+		),
+	),
+);
+// $overlay-
+// $overlay-
+// $overlay-
+// $overlay-
+// $overlay-
+// $overlay-
+
+:root[theme="default"] {
+	@each $section, $child in $theme {
+		@each $group, $types in $child {
+			@each $variant, $value in $types {
+				--c-#{$section}-#{$group}-#{$variant}: #{$value};
+			}
+		}
+	}
+}

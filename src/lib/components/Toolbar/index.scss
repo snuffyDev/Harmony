@@ -1,0 +1,13 @@
+.toolbar {
+	display: flex;
+	border-bottom: #353849 1px solid;
+	gap: 1em;
+	background: hsla(0, 0%, 20%, 0.1);
+	padding: 0.25em 0.5em;
+	height: var(--height, auto);
+}
+
+:global(label) {
+	display: flex;
+	gap: 0.5em;
+}
