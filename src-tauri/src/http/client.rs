@@ -52,7 +52,7 @@ pub async fn parse_response(mut response: Response) -> ParseResult {
 }
 
 impl HttpClient {
-    fn new() -> Self {
+    pub fn new() -> Self {
         let client = Arc::new(Mutex::new(Client::new()));
         Self {
             client,
