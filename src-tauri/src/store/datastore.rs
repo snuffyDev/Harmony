@@ -1,6 +1,10 @@
-use surrealdb::Datastore;
-use surrealdb::Error;
+// use surrealdb::Datastore;
+// use surrealdb::Error;
+
+// fn store() {
+//     // Datastore::
+// }
 
 fn store() {
-    // Datastore::
+    todo!();
 }

@@ -8,7 +8,7 @@ pub mod utils;
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![http::client::get])
+        .invoke_handler(tauri::generate_handler![http::get, http::post])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

@@ -1,6 +1,6 @@
 import { invoke } from "@tauri-apps/api";
-import type { GET, HttpResponse, POST } from "./types/http";
-
+import type { HttpGET, HttpPOST } from "./types/http";
+import type { HttpResponse } from './types/models/Http'
 interface Commands {
 	get: {
 		url: string;
@@ -18,6 +18,6 @@ type Command<T extends keyof Commands = keyof Commands> = Commands[T];
 
 const cmd = <Key extends keyof Commands = keyof Commands>(cmd: Key, args: Command<Key>) => invoke(cmd, args);
 
-export const get = (args: Command<GET>) => cmd("get", args) as Promise<unknown> as Promise<HttpResponse>;
+export const get = (args: Command<HttpGET>) => cmd("get", args) as Promise<unknown> as Promise<HttpResponse>;
 
-export const post = (args: Command<POST>) => cmd("post", args) as Promise<unknown> as Promise<HttpResponse>;
+export const post = (args: Command<HttpPOST>) => cmd("post", args) as Promise<unknown> as Promise<HttpResponse>;

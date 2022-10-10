@@ -410,12 +410,6 @@ export enum StatusCode {
 	/// gain network access.
 	NetworkAuthenticationRequired = 511,
 }
-export interface HttpResponse {
-	body: Uint8Array;
-	status_code: StatusCode;
-	content_type: string;
-	response_time: number | undefined;
-}
 
-export type GET = "get";
-export type POST = "post";
+export type HttpGET = "get";
+export type HttpPOST = "post";

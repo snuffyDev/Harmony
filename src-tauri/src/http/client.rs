@@ -140,41 +140,9 @@ impl HttpClient {
 pub struct HttpOptions {}
 
 #[derive(Serialize, Deserialize, Debug)]
-pub struct PostOptions {
+pub struct HttpPostOptions {
     url: String,
     body: Vec<u8>,
     headers: Option<HashMap<String, String>>,
     content_type: String,
-}
-
-#[tauri::command]
-pub async fn post(opts: PostOptions) -> Result<HttpResponse, String> {
-    let client = HttpClient::new()
-        .url(&opts.url)
-        .method(Method::Post)
-        .body(opts.body)
-        .build()
-        .expect("Error building POST HttpClient");
-
-    let res = client.send().await.expect("Error sending request");
-    Ok(res)
-}
-
-#[tauri::command]
-pub async fn get(url: &str, follow_redirects: bool) -> Result<HttpResponse, String> {
-    let redirect = if follow_redirects == true {
-        Some(true)
-    } else {
-        Some(false)
-    };
-
-    let client = HttpClient::new()
-        .url(url)
-        .method(Method::Get)
-        .follow_redirects(redirect)
-        .build()
-        .expect("Error building HttpClient");
-
-    let res = client.send().await.expect("Error sending request");
-    Ok(res)
 }
