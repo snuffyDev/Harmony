@@ -1,5 +1,6 @@
 pub mod client;
 pub use client::{HttpClient, HttpOptions, HttpPostOptions, HttpResponse};
+use surf::http::Method;
 
 #[tauri::command]
 pub async fn post(opts: HttpPostOptions) -> Result<HttpResponse, String> {

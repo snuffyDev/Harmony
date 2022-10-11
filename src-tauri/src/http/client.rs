@@ -52,7 +52,7 @@ pub async fn parse_response(mut response: Response) -> ParseResult {
 }
 
 impl HttpClient {
-    fn new() -> Self {
+    pub fn new() -> Self {
         let client = Arc::new(Mutex::new(Client::new()));
         Self {
             client,
@@ -141,8 +141,8 @@ pub struct HttpOptions {}
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct HttpPostOptions {
-    url: String,
-    body: Vec<u8>,
-    headers: Option<HashMap<String, String>>,
-    content_type: String,
+    pub url: String,
+    pub body: Vec<u8>,
+    pub headers: Option<HashMap<String, String>>,
+    pub content_type: String,
 }
